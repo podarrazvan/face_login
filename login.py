@@ -67,7 +67,7 @@ def new_face():
 
         image = face_recognition.load_image_file(f'./users/{username}/{username}.jpg')
         face_loocations = face_recognition.face_locations(image)
-        # this should save only the face but not working for a moment ...
+        # this should save only the face but is not working for a moment ...
         for face_location in face_loocations:
             top = face_loocations[0][0]
             right = face_loocations[0][1]
@@ -76,7 +76,7 @@ def new_face():
 
             face_image = image[top:bottom, left:right]
             pil_image = Image.fromarray(face_image)
-            pil_image.save(f'{username}.jpg')
+            pil_image.save(f"./users/{username}/{username}.jpg")
             print(f"Wellcome, {username}!")
             stop = True
 
